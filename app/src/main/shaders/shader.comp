@@ -1,0 +1,7 @@
+#version 450
+layout(binding=0) buffer Input { int value[]; } inputData;
+layout(binding=1) buffer Output { int value[]; } outputData;
+
+void main() {
+    outputData.value[gl_GlobalInvocationID.x] = inputData.value[gl_GlobalInvocationID.x];
+}

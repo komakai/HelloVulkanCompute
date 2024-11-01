@@ -1,0 +1,48 @@
+[versions]
+agp = "8.5.2"
+kotlin = "1.9.0"
+kotlinxCoroutines = "1.7.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+androidxConstraintLayout = "2.1.4"
+androidxCore = "1.13.1"
+androidxGames = "3.0.5"
+androidxJUnitGTest = "1.0.0-alpha02"
+appcompat = "1.6.1"
+material = "1.12.0"
+jetbrainsKotlinJvm = "1.7.21"
+oboe = "1.9.0"
+
+curl = "7.79.1-beta-1"
+googletest = "1.11.0-beta-1"
+jsoncpp = "1.9.5-beta-1"
+openssl = "1.1.1q-beta-1"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidxConstraintLayout" }
+androidx-core = { group = "androidx.core", name = "core", version.ref = "androidxCore" }
+androidx-games-gameactivity = { group = "androidx.games", name = "games-activity", version.ref = "androidxGames" }
+androidx-junit-gtest = { group = "androidx.test.ext", name = "junit-gtest", version.ref = "androidxJUnitGTest" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+oboe = { group = "com.google.oboe", name = "oboe", version.ref = "oboe" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+curl = { group = "com.android.ndk.thirdparty", name = "curl", version.ref = "curl" }
+googletest = { group = "com.android.ndk.thirdparty", name = "googletest", version.ref = "googletest" }
+jsoncpp = { group = "com.android.ndk.thirdparty", name = "jsoncpp", version.ref = "jsoncpp" }
+openssl = { group = "com.android.ndk.thirdparty", name = "openssl", version.ref = "openssl" }
+
+# build-logic dependencies
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
