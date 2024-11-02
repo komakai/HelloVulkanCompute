@@ -710,16 +710,18 @@ void HelloVK::createComputePipeline() {
 }
 
 VkShaderModule HelloVK::createShaderModule(const std::vector<uint8_t> &code) {
-    VkShaderModuleCreateInfo createInfo{};
-    createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
-    createInfo.codeSize = code.size();
-
-    // Satisifies alignment requirements since the allocator
+    // Satisfies alignment requirements since the allocator
     // in vector ensures worst case requirements
-    createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
+    VkShaderModuleCreateInfo createInfo = {
+            VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO,
+            nullptr,
+            0,
+            code.size(),
+            reinterpret_cast<const uint32_t *>(code.data())
+    };
+
     VkShaderModule shaderModule;
     VK_CHECK(vkCreateShaderModule(device, &createInfo, nullptr, &shaderModule));
-
     return shaderModule;
 }
 
